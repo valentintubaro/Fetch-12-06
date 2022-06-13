@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="btn">
+        <button class="btn" onclick="traer()" > Obtener </button>
+        <div class="mt-5" id="contenido"> 
+            <p></p>
+        </div>
+    </div>
+    <script>
+        var contenido = document.querySelector('#contenido')
+function traer() {
+   fetch('texto.text')
+   .then(data=> data.text())
+   .then(data=>{
+       console.log(data)
+       contenido.innerHTML = `${data}`
+   })
+    }
+    
+    </script>
+</body>
+</html>
